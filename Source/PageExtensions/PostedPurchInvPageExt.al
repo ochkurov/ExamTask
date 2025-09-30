@@ -11,6 +11,4 @@ pageextension 50106 "Posted Purch. Inv. Ext" extends "Posted Purchase Invoice"
             }
         }
     }
-
-
 }
