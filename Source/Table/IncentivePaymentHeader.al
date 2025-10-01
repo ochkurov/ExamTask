@@ -24,6 +24,7 @@ table 50124 "Incentive Payment Header"
         field(5; Status; Enum "Incentive Payment Status")
         {
             Caption = 'Status';
+            InitValue = Open;
         }
     }
 
