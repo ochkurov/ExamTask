@@ -7,4 +7,8 @@ enum 50101 "Document Type Enum"
     {
         Caption = 'Sales Invoice';
     }
+    value(1; "Incentive Payment")
+    {
+        Caption = 'Incentive Payment';
+    }
 }
