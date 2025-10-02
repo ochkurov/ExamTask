@@ -13,7 +13,7 @@ pageextension 50129 "Incentive Payment Extension" extends "Incentive Payment"
                 Image = ActivateDiscounts;
                 trigger OnAction()
                 begin
-                    Report.SaveAsExcel(Report::"Incentive Payment Report", 'IncentiveReport.xlsx');
+                    Report.Run(Report::"Incentive Payment Report");
                 end;
             }
         }
