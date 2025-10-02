@@ -28,7 +28,7 @@ It is built with AL for Microsoft Dynamics 365 Business Central and demonstrates
 
 Language: AL
 
-Platform: Microsoft Dynamics 365 Business Central v24
+Platform: Microsoft Dynamics 365 Business Central 
 
 Concepts: Table & Page Extensions, Event Subscribers, Custom Documents, FlowFields, Reports, Excel Export
 
