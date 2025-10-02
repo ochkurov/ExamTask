@@ -26,7 +26,7 @@ table 50119 "Incentive Setup"
 
     keys
     {
-        key(PK; "Salespersone Code")
+        key(PK; "Salespersone Code", "Product Group Code")
         {
             Clustered = true;
         }

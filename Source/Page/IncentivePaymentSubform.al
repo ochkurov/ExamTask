@@ -3,6 +3,7 @@ page 50127 "Incentive Payment Subform"
     PageType = ListPart;
     SourceTable = "Incentive Payment Line";
     Caption = 'Incentive Payment Lines';
+    UsageCategory = Administration;
 
     layout
     {

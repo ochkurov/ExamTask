@@ -4,6 +4,7 @@ page 50120 "Incentive Setup List"
     Caption = 'Incentive Setup';
     ApplicationArea = All;
     SourceTable = "Incentive Setup";
+    UsageCategory = Administration;
 
     layout
     {

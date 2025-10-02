@@ -3,6 +3,7 @@ page 50126 "Incentive Payment"
     PageType = Document;
     SourceTable = "Incentive Payment Header";
     Caption = 'Incentive Payment';
+    UsageCategory = Administration;
 
     layout
     {
@@ -38,7 +39,7 @@ page 50126 "Incentive Payment"
 
                 trigger OnAction()
                 var
-                    CalculateCodeUnit: Codeunit "Incentive Payment Calculate"
+                    CalculateCodeUnit: Codeunit "Incentive Payment Calculate";
                 begin
                     CalculateCodeUnit.Run(Rec)
                 end;
