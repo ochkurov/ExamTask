@@ -23,7 +23,7 @@ table 50121 "Incentive Ledger Entry"
         field(4; "Salesperson Code"; Code[20])
         {
             Caption = 'Salesperson Code';
-            TableRelation = "Salesperson/Purchaser".Code;
+            TableRelation = "Salesperson/Purchaser";
         }
 
         field(5; "Document No."; Code[20])

@@ -7,14 +7,14 @@ table 50119 "Incentive Setup"
     {
         field(1; "Salespersone Code"; Code[20])
         {
-            DataClassification = ToBeClassified;
-            TableRelation = "Salesperson/Purchaser".Code;
+            Caption = 'Salespersone Code';
+            TableRelation = "Salesperson/Purchaser";
 
         }
         field(2; "Product Group Code"; Code[20])
         {
             Caption = 'Product Group Code';
-            TableRelation = "Item Category".Code;
+            TableRelation = "Item Category";
         }
 
         field(3; "Incentive Percent"; Decimal)
