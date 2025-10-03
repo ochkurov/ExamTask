@@ -18,12 +18,12 @@ report 50130 "Incentive Payment Report"
                 {
                     field(PeriodStart; PeriodStart)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'PeriodStart';
                     }
                     field(PeriodEnd; PeriodEnd)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'PeriodEnd';
                     }
                 }
