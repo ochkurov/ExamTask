@@ -73,7 +73,7 @@ report 50130 "Incentive Payment Report"
                         ExcelBuf.AddColumn(Ledger.Amount, false, '', false, false, false, '0.00', ExcelBuf."Cell Type"::Number);
                         ExcelBuf.NewRow();
                         //Calculate total bonus
-                        TotalBonus += Ledger.Amount
+                        TotalBonus += Ledger.Amount;
                     until Ledger.Next() = 0;
 
 
