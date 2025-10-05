@@ -12,11 +12,12 @@ page 50125 "Incentive Payment List"
         {
             repeater(Group)
             {
-                field("No."; Rec."No.") { ApplicationArea = All; }
-                field("Posting Date"; Rec."Posting Date") { ApplicationArea = All; }
-                field("Period Begin"; Rec."Period Begin") { ApplicationArea = All; }
-                field("Period End"; Rec."Period End") { ApplicationArea = All; }
-                field(Status; Rec.Status) { ApplicationArea = All; }
+                field("No."; Rec."No.") { }
+                field("SalesPerson"; Rec.SalesPerson) { }
+                field("Posting Date"; Rec."Posting Date") { }
+                field("Period Begin"; Rec."Period Begin") { }
+                field("Period End"; Rec."Period End") { }
+                field(Status; Rec.Status) { }
             }
         }
     }
@@ -25,17 +26,19 @@ page 50125 "Incentive Payment List"
     {
         area(Processing)
         {
-            action(OpenDocument)
+            action(CreateDocument)
             {
-                Caption = 'Open Document';
-                ApplicationArea = All;
+                Caption = 'Create Document';
                 Image = EditLines;
                 Promoted = true;
                 PromotedCategory = Process;
 
                 trigger OnAction()
+                var
+                    NewPayment: Record "Incentive Payment Header";
                 begin
-                    PAGE.Run(PAGE::"Incentive Payment", Rec);
+                    NewPayment.Init();
+                    PAGE.Run(PAGE::"Incentive Payment", NewPayment);
                 end;
             }
         }

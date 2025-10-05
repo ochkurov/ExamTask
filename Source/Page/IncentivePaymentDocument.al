@@ -12,6 +12,7 @@ page 50126 "Incentive Payment"
             group(General)
             {
                 field("No."; Rec."No.") { ApplicationArea = All; }
+                field("SalesPerson"; Rec.SalesPerson) { ApplicationArea = All; }
                 field("Posting Date"; Rec."Posting Date") { ApplicationArea = All; }
                 field("Period Start"; Rec."Period Begin") { ApplicationArea = All; }
                 field("Period End"; Rec."Period End") { ApplicationArea = All; }
@@ -47,6 +48,4 @@ page 50126 "Incentive Payment"
         }
     }
 
-    var
-        myInt: Integer;
 }

@@ -10,8 +10,10 @@ codeunit 50128 "Incentive Payment Calculate"
         PaymentHeader.TestField(Status, PaymentHeader.Status::Open);
         if (PaymentHeader."Period Begin" < PaymentHeader."Period End") and (PaymentHeader."Period Begin" > 0D) then
             Error('Period End must be before than Period Begin.');
+        PaymentHeader.Reset();
 
         PaymentLine.Reset();
+
         PaymentLine.SetRange("Document No.", PaymentHeader."No.");
 
         if PaymentLine.FindSet() then
