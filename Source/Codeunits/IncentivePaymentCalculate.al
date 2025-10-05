@@ -7,10 +7,9 @@ codeunit 50128 "Incentive Payment Calculate"
         Salesperson: Record "Salesperson/Purchaser";
         BonusSum: Decimal;
     begin
-        if PaymentHeader.Status <> "Incentive Payment Status"::Open then
-            Error('Document is already Posted');
-        if PaymentHeader."Period Begin;" > PaymentHeader."Period End" then
-            Error('Period Begin must be early than Period End.');
+        PaymentHeader.TestField(Status, PaymentHeader.Status::Open);
+        if (PaymentHeader."Period Begin" < PaymentHeader."Period End") and (PaymentHeader."Period Begin" > 0D) then
+            Error('Period End must be before than Period Begin.');
 
         PaymentLine.Reset();
         PaymentLine.SetRange("Document No.", PaymentHeader."No.");
@@ -22,16 +21,14 @@ codeunit 50128 "Incentive Payment Calculate"
                 IncentiveLedger.SetRange("Document Type", "Document Type Enum"::"Sales Invoice"); // find only not payed Document
 
                 IncentiveLedger.SetRange("Salesperson Code", PaymentLine."Salesperson Code");
-                IncentiveLedger.SetRange("Posting Date", PaymentHeader."Period Begin;", PaymentHeader."Period End");
-                if IncentiveLedger.FindSet() then
-                    repeat
-                        BonusSum += IncentiveLedger.Amount;
-                    until IncentiveLedger.Next() = 0;
+                IncentiveLedger.SetRange("Posting Date", PaymentHeader."Period Begin", PaymentHeader."Period End");
+                IncentiveLedger.CalcSums(Amount);
+                BonusSum := IncentiveLedger.Amount;
 
                 PaymentLine."Incentive Amount" := BonusSum;
                 Salesperson.Get(PaymentLine."Salesperson Code");
                 PaymentLine."Salary Amount" := Salesperson."Salary Amount";
-                PaymentLine."Total Amount" := PaymentLine."Incentive Amount" + PaymentLine."Salary Amount";
+                PaymentLine."Total Amount" := PaymentLine."Incentive Amount" + Salesperson."Salary Amount";
                 PaymentLine.Modify();
 
                 IncentiveLedger.Init();

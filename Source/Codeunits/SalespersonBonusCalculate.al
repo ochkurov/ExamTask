@@ -13,6 +13,8 @@ codeunit 50124 SalespersonBonusCalculate
         IncentivePercent: Decimal; // Percentage of sales amount , used to calculate the managers incentive.
         IncentiveAmount: Decimal; // Calculated incentive amount for the current sales invoice line.
     begin
+        if SalesLine.Type <> SalesLine.Type::Item then
+            exit;
         if SalesInvHeader."Salesperson Code" = '' then
             exit;
         Salesperson.Get(SalesInvHeader."Salesperson Code");
@@ -27,7 +29,7 @@ codeunit 50124 SalespersonBonusCalculate
         IncentiveLedger."Salesperson Code" := SalesInvHeader."Salesperson Code";
         IncentiveLedger."Document No." := SalesInvHeader."No.";
         IncentiveLedger.Amount := IncentiveAmount;
-        IncentiveLedger.Insert();
+        IncentiveLedger.Insert(true);
 
     end;
 }

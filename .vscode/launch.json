@@ -7,14 +7,15 @@
             "type": "al",
             "environmentType": "OnPrem",
             "server": "http://localhost:8080/BC240",
-  "serverInstance": "BC240",
+            "serverInstance": "BC240",
             "authentication": "Windows",
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "default",
-            "usePublicURLFromServer": true
+            "usePublicURLFromServer": true,
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

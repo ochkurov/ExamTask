@@ -13,7 +13,7 @@ table 50124 "Incentive Payment Header"
         {
             Caption = 'Posting Date';
         }
-        field(3; "Period Begin;"; Date)
+        field(3; "Period Begin"; Date)
         {
             Caption = 'Period Begin';
         }
