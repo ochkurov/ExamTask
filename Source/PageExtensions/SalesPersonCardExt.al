@@ -2,17 +2,29 @@ pageextension 50123 SalespersonCardExt extends "Salesperson/Purchaser Card"
 {
     layout
     {
-        addlast(General)
+        addafter(Invoicing)
         {
-            field("Salary Amount"; Rec."Salary Amount")
+            group(Salary)
             {
-                ApplicationArea = All;
-            }
-            field("Incentive Amount"; Rec."Incentive Amount")
-            {
-                ApplicationArea = All;
+                Caption = 'Salary';
+                field("Salary Amount"; Rec."Salary Amount")
+                {
+                    ApplicationArea = All;
+                }
+                field("Commission"; Rec."Commission %")
+                {
+                    ApplicationArea = All;
+                }
+                field("Incentive Amount"; Rec."Incentive Amount")
+                {
+                    ApplicationArea = All;
+                }
+
             }
         }
+        modify("Commission %")
+        {
+            Visible = false;
+        }
     }
-
 }

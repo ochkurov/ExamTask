@@ -1,6 +1,6 @@
 page 50126 "Incentive Payment"
 {
-    PageType = Document;
+    PageType = Card;
     SourceTable = "Incentive Payment Header";
     Caption = 'Incentive Payment';
     UsageCategory = Documents;
@@ -11,12 +11,28 @@ page 50126 "Incentive Payment"
         {
             group(General)
             {
-                field("No."; Rec."No.") { ApplicationArea = All; }
-                field("SalesPerson"; Rec.SalesPerson) { ApplicationArea = All; }
-                field("Posting Date"; Rec."Posting Date") { ApplicationArea = All; }
-                field("Period Start"; Rec."Period Begin") { ApplicationArea = All; }
-                field("Period End"; Rec."Period End") { ApplicationArea = All; }
-                field("Status"; Rec.Status) { ApplicationArea = All; }
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Posting Date"; Rec."Posting Date")
+                {
+                    ApplicationArea = All;
+                }
+                field("Period Start"; Rec."Period Begin")
+                {
+                    ApplicationArea = All;
+                }
+                field("Period End"; Rec."Period End")
+                {
+                    ApplicationArea = All;
+                }
+                field("Status"; Rec.Status)
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+
+                }
             }
 
             part(Lines; "Incentive Payment Subform")
@@ -47,5 +63,4 @@ page 50126 "Incentive Payment"
             }
         }
     }
-
 }

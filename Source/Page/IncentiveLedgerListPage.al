@@ -5,6 +5,7 @@ page 50122 "Incentive Ledger List"
     SourceTable = "Incentive Ledger Entry";
     ApplicationArea = All;
     UsageCategory = Administration;
+    Editable = false;
 
     layout
     {

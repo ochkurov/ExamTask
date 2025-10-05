@@ -3,6 +3,7 @@ table 50121 "Incentive Ledger Entry"
     Caption = 'Incentive Ledger Entry';
     DataClassification = CustomerContent;
 
+
     fields
     {
         field(1; "Entry No."; Integer)
